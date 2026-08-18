@@ -28,5 +28,24 @@
   "type": "module",
   "main": "vso-npm.mjs",
   "scripts": {
+    "lint": "npm-run-all --continue-on-error lint:*",
+    "lint:eslint": "eslint --config eslint.config.mjs",
+    "lint:tsc": "tsc --noEmit -p tsconfig.json",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@tsconfig/bases": "^1",
+    "@types/node": "~22",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10.1",
+    "eslint-plugin-import": "^2.29",
+    "eslint-plugin-n": "^17",
+    "eslint-plugin-prettier": "^5",
+    "globals": "^17",
+    "npm-run-all2": "^9",
+    "prettier": "^3",
+    "typescript": "^6"
   }
 }
