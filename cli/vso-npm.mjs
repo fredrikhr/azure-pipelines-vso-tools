@@ -1,3 +1,6 @@
+import { PassThrough } from "node:stream";
+import * as readline from "node:readline";
+
 import {
   command,
   debug,
@@ -60,15 +63,31 @@ function pushLogIssue(props, message) {
   logIssueBuffer.push({ props, message });
 }
 
-/** @param {string} line */
-function onNpmStdErrLine(line) {
+// Using own errline parsing here is necessary, because the ToolRunner built-in
+// errline handling only accounts for os.EOL line-endings, whereas NPM happily
+// outputs \n line-endings only. This leads to errors and warnings not being
+// captured properly on when running on Windows
+// (or any other OS where os.EOL is not equal to "\n")
+const errlinePassThrough = new PassThrough();
+const errline = readline.createInterface({
+  input: errlinePassThrough,
+  crlfDelay: Infinity,
+});
+errline.on("line", (line) => {
   if (typeof line !== "string" || !line) return;
   if (tryGetErrorMatch(line, pushLogIssue)) {
     runTracker.errorCount += 1;
   } else if (tryGetWarningMatch(line, pushLogIssue)) {
     runTracker.warningCount += 1;
   }
-}
+});
+toolRunner.on(
+  "stderr",
+  /** @param {Buffer} data */ (data) => {
+    errlinePassThrough.write(data);
+  },
+);
+toolRunner.on("done", () => errlinePassThrough.end());
 
 /** @see https://github.com/dword-design/package-name-regex/blob/658ce7a661512f3e1e5496d6eb1dfd5ec8ae65a1/src/index.js */
 const npmPackageNameRegex =
@@ -78,7 +97,6 @@ const npmPackageNameRegexWithVersionAndColon = new RegExp(
   "u",
 );
 
-toolRunner.on("errline", onNpmStdErrLine);
 toolRunner.execAsync({ ignoreReturnCode: true }).then((exitCode) => {
   const mergedLogIssueBuffer = logIssueBuffer.reduce((acc, curr) => {
     const prv = acc[acc.length - 1];
