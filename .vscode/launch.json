@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "vso-npm with error",
+      "program": "${workspaceFolder}",
+      "args": ["run", "non-existent-task"],
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}

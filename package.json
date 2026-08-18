@@ -32,7 +32,8 @@
     "lint:eslint": "eslint --config eslint.config.mjs",
     "lint:tsc": "tsc --noEmit -p tsconfig.json",
     "prettier": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "test:error": "node . run non-existent"
   },
   "devDependencies": {
     "@eslint/js": "^9",
