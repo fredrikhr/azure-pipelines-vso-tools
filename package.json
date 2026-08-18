@@ -26,9 +26,9 @@
     "node": ">= 22"
   },
   "type": "module",
-  "main": "cli/vso-prettier.mjs",
+  "main": "cli/vso-prettier-check.mjs",
   "bin": {
-    "vso-prettier": "cli/vso-prettier.mjs"
+    "vso-prettier-check": "cli/vso-prettier-check.mjs"
   },
   "scripts": {
     "lint": "npm-run-all --continue-on-error lint:*",
@@ -36,7 +36,7 @@
     "lint:tsc": "tsc --noEmit -p tsconfig.json",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "test": "node . --check ."
+    "test": "node . ."
   },
   "devDependencies": {
     "@eslint/js": "^9",

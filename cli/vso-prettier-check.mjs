@@ -25,7 +25,14 @@ const runTracker = {
   errorCount: 0,
 };
 const toolRunner = new ToolRunner("npm");
-toolRunner.arg(["exec", "--package=prettier", "--", "prettier", "--no-color"]);
+toolRunner.arg([
+  "exec",
+  "--package=prettier",
+  "--",
+  "prettier",
+  "--check",
+  "--no-color",
+]);
 toolRunner.arg(argv);
 
 const prettierMessageRegex = /^\[([^\]]*)\]\s*(.*)$/iu;

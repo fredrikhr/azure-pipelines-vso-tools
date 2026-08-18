@@ -3,7 +3,7 @@
     {
       "name": "vso-prettier",
       "program": "${workspaceFolder}",
-      "args": ["--check", "."],
+      "args": ["."],
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
