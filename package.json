@@ -1,0 +1,32 @@
+{
+  "name": "@fredrikhr/azure-pipelines-vso-npm",
+  "version": "12.0.0",
+  "description": "Wrapper around Node.js npm CLI to enable Logging Commands for Azure DevOps Pipelines",
+  "keywords": [
+    "npm",
+    "azure-pipelines",
+    "vso",
+    "cicd"
+  ],
+  "homepage": "https://github.com/fredrikhr/azure-pipelines-vso-npm#readme",
+  "bugs": {
+    "url": "https://github.com/fredrikhr/azure-pipelines-vso-npm/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrikhr/azure-pipelines-vso-npm.git"
+  },
+  "author": {
+    "name": "Fredrik Høisæther Rasch",
+    "email": "fredrik.rasch@gmail.com",
+    "url": "https://github.com/fredrikhr"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 22"
+  },
+  "type": "module",
+  "main": "vso-npm.mjs",
+  "scripts": {
+  }
+}
