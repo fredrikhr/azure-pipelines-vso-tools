@@ -16,10 +16,10 @@ const toolRunner = new ToolRunner("npm");
 toolRunner.arg(argv);
 
 /** @see https://github.com/thnetii/gh-actions/blob/f159471f6c222ff68652dca83441d13942100355/src/add-matcher-npm/npm.json */
-const regexErrorPattern = "^npm\\s+ERR!\\s+(.*)$";
-const regexErrorMatcher = new RegExp(regexErrorPattern, "u");
-const regexWarningPattern = "^npm\\s+WARN\\s+(\\S+)\\s(.*)$";
-const regexWarningMatcher = new RegExp(regexWarningPattern, "u");
+const regexErrorPattern = "^npm\\s+(ERR!|error)\\s+(.*)$";
+const regexErrorMatcher = new RegExp(regexErrorPattern, "ui");
+const regexWarningPattern = "^npm\\s+(WARN|warning)\\s+(\\S+)\\s(.*)$";
+const regexWarningMatcher = new RegExp(regexWarningPattern, "ui");
 
 /**
  * @typedef {Object} NpmIssueProperties
@@ -36,7 +36,7 @@ const regexWarningMatcher = new RegExp(regexWarningPattern, "u");
 function tryGetErrorMatch(line, onMatch) {
   const match = regexErrorMatcher.exec(line);
   if (!match) return false;
-  const [, message] = match;
+  const [, , message] = match;
   onMatch({ type: "Error" }, message || "");
   return true;
 }
@@ -48,7 +48,7 @@ function tryGetErrorMatch(line, onMatch) {
 function tryGetWarningMatch(line, onMatch) {
   const match = regexWarningMatcher.exec(line);
   if (!match) return false;
-  const [, code, message] = match;
+  const [, , code, message] = match;
   onMatch({ type: "Warning", code }, `${code} ${message}`);
   return true;
 }
