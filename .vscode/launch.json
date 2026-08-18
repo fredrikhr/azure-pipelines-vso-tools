@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "vso-prettier",
+      "program": "${workspaceFolder}",
+      "args": ["--check", "."],
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}
