@@ -1,4 +1,12 @@
 {
   "configurations": [
+    {
+      "name": "vso-npm with error",
+      "program": "${workspaceFolder}/cli/vso-npm.mjs",
+      "args": ["run", "non-existent-task"],
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
   ]
 }
