@@ -27,6 +27,9 @@
   },
   "type": "module",
   "main": "cli/vso-npm.mjs",
+  "bin": {
+    "vso-npm": "cli/vso-npm.mjs"
+  },
   "scripts": {
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint --config eslint.config.mjs",

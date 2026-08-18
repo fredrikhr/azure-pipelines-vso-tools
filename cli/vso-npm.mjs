@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { PassThrough } from "node:stream";
 import * as readline from "node:readline";
 
