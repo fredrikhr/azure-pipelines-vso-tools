@@ -7,6 +7,14 @@
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
+    },
+    {
+      "name": "vso-tsc",
+      "program": "${workspaceFolder}/cli/vso-tsc.mjs",
+      "args": ["--noEmit"],
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
     }
   ]
 }

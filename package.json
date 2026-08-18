@@ -28,7 +28,8 @@
   },
   "type": "module",
   "bin": {
-    "vso-npm": "cli/vso-npm.mjs"
+    "vso-npm": "cli/vso-npm.mjs",
+    "vso-tsc": "cli/vso-tsc.mjs"
   },
   "scripts": {
     "lint": "npm-run-all --continue-on-error lint:*",
