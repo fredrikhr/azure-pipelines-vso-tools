@@ -15,6 +15,14 @@
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
+    },
+    {
+      "name": "vso-prettier-check",
+      "program": "${workspaceFolder}/cli/vso-prettier-check.mjs",
+      "args": ["."],
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
     }
   ]
 }

@@ -29,6 +29,7 @@
   "type": "module",
   "bin": {
     "vso-npm": "cli/vso-npm.mjs",
+    "vso-prettier-check": "cli/vso-prettier-check.mjs",
     "vso-tsc": "cli/vso-tsc.mjs"
   },
   "scripts": {
