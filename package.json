@@ -1,0 +1,56 @@
+{
+  "name": "@fredrikhr/azure-pipelines-vso-tools",
+  "version": "1.0.0",
+  "description": "Wrapper around common CLI tools to enable Logging Commands for Azure DevOps Pipelines",
+  "keywords": [
+    "tools",
+    "cli",
+    "azure-pipelines",
+    "vso",
+    "cicd"
+  ],
+  "homepage": "https://github.com/fredrikhr/azure-pipelines-vso-tools#readme",
+  "bugs": {
+    "url": "https://github.com/fredrikhr/azure-pipelines-vso-tools/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrikhr/azure-pipelines-vso-tools.git"
+  },
+  "author": {
+    "name": "Fredrik Høisæther Rasch",
+    "email": "fredrik.rasch@gmail.com",
+    "url": "https://github.com/fredrikhr"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 22"
+  },
+  "type": "module",
+  "bin": {
+  },
+  "scripts": {
+    "lint": "npm-run-all --continue-on-error lint:*",
+    "lint:eslint": "eslint --config eslint.config.mjs",
+    "lint:tsc": "tsc --noEmit -p tsconfig.json",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@tsconfig/bases": "^1",
+    "@types/node": "~22",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10.1",
+    "eslint-plugin-import": "^2.29",
+    "eslint-plugin-n": "^17",
+    "eslint-plugin-prettier": "^5",
+    "globals": "^17",
+    "npm-run-all2": "^9",
+    "prettier": "^3",
+    "typescript": "^6"
+  },
+  "dependencies": {
+    "azure-pipelines-task-lib": "^5.279.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "@tsconfig/bases/strictest",
+    "@tsconfig/bases/node22",
+  ],
+  "compilerOptions": {
+    "checkJs": true,
+    "noEmit": true
+  }
+}
