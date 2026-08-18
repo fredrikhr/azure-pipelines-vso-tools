@@ -1,0 +1,59 @@
+{
+  "name": "@fredrikhr/azure-pipelines-vso-tsc",
+  "version": "6.0.0",
+  "description": "Wrapper around TypeScript tsc CLI to enable Logging Commands for Azure DevOps Pipelines",
+  "keywords": [
+    "typescript",
+    "tsc",
+    "azure-pipelines",
+    "vso",
+    "cicd"
+  ],
+  "homepage": "https://github.com/fredrikhr/azure-pipelines-vso-tsc#readme",
+  "bugs": {
+    "url": "https://github.com/fredrikhr/azure-pipelines-vso-tsc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrikhr/azure-pipelines-vso-tsc.git"
+  },
+  "author": {
+    "name": "Fredrik Høisæther Rasch",
+    "email": "fredrik.rasch@gmail.com",
+    "url": "https://github.com/fredrikhr"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 22"
+  },
+  "type": "module",
+  "main": "cli/vso-tsc.mjs",
+  "bin": {
+    "vso-tsc": "cli/vso-tsc.mjs"
+  },
+  "scripts": {
+    "lint": "npm-run-all --continue-on-error lint:*",
+    "lint:eslint": "eslint --config eslint.config.mjs",
+    "lint:tsc": "tsc --noEmit -p tsconfig.json",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "test:error": "node . run non-existent"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@tsconfig/bases": "^1",
+    "@types/node": "~22",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10.1",
+    "eslint-plugin-import": "^2.29",
+    "eslint-plugin-n": "^17",
+    "eslint-plugin-prettier": "^5",
+    "globals": "^17",
+    "npm-run-all2": "^9",
+    "prettier": "^3",
+    "typescript": "^6"
+  },
+  "dependencies": {
+    "azure-pipelines-task-lib": "^5.279.0"
+  }
+}

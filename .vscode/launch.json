@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "vso-tsc",
+      "program": "${workspaceFolder}",
+      "args": ["--noEmit"],
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}
