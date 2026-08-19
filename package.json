@@ -33,6 +33,7 @@
     "LICENSE"
   ],
   "bin": {
+    "vso-eslint": "cli/vso-eslint.mjs",
     "vso-npm": "cli/vso-npm.mjs",
     "vso-npm-audit": "cli/vso-npm-audit.mjs",
     "vso-prettier-check": "cli/vso-prettier-check.mjs",
