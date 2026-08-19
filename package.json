@@ -41,7 +41,7 @@
     "prettier:check": "prettier --check ."
   },
   "devDependencies": {
-    "@eslint/js": "^9",
+    "@eslint/js": "^10",
     "@tsconfig/bases": "^1",
     "@types/node": "~22",
     "eslint": "^9",
