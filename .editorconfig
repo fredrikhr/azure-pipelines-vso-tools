@@ -8,6 +8,9 @@ indent_style = space
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+[cli/**/*.{js,mjs,csj}]
+end_of_line = lf
+
 # Xml files
 [*.{xml,wsdl,wadl}]
 indent_size = 2
