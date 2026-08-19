@@ -58,18 +58,8 @@ function logResult({
  * @param {string[]} argv
  */
 async function run(argv) {
-  const eslintExecArgs = ["exec", "--package=eslint", "--", "eslint"];
-  const hrToolRunner = new ToolRunner("npm");
-  hrToolRunner.arg(eslintExecArgs);
-  hrToolRunner.arg(argv);
-
-  const hrToolExitCode = await hrToolRunner.execAsync({
-    ignoreReturnCode: true,
-  });
-  debug(`ESLint exited with code '${hrToolExitCode}'.`);
-  if (hrToolExitCode === 0) return;
-
   const jsonToolRunner = new ToolRunner("npm");
+  const eslintExecArgs = ["exec", "--package=eslint", "--", "eslint"];
   jsonToolRunner.arg(eslintExecArgs);
   jsonToolRunner.arg("--format=json");
   jsonToolRunner.arg(argv);
