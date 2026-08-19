@@ -27,6 +27,11 @@
     "node": ">= 22"
   },
   "type": "module",
+  "files": [
+    "cli/",
+    "!cli/.prettierrc.yml",
+    "LICENSE"
+  ],
   "bin": {
     "vso-npm": "cli/vso-npm.mjs",
     "vso-npm-audit": "cli/vso-npm-audit.mjs",
