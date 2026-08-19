@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import * as path from "node:path";
-import * as fs from "node:fs";
 import { PassThrough } from "node:stream";
 import * as readline from "node:readline";
 
 import {
   command,
+  exist,
   debug,
   getVariable,
   setResult,
@@ -62,7 +62,7 @@ function tryEmitPrettierMessageCommand(line) {
   ) || [undefined, undefined];
   /** @type {VsoTaskLogIssueProperties?} */
   const properties = type === "warning" || type === "error" ? { type } : null;
-  if (properties && fs.existsSync(message)) {
+  if (properties && exist(message)) {
     const filePath = path.relative(sourcesRootDirectory, message);
     properties.sourcepath = filePath;
   }
