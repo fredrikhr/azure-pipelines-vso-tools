@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import * as process from "node:process";
 import {
   command,
   debug,
@@ -200,8 +201,8 @@ async function run(argv) {
   const hrToolExitCode = await hrToolRunner.execAsync({
     ignoreReturnCode: true,
   });
-  if (hrToolExitCode === 0) return;
   debug(`npm audit exited with code '${hrToolExitCode}'.`);
+  if (hrToolExitCode === 0) return;
 
   const jsonToolRunner = new ToolRunner("npm");
   jsonToolRunner.arg(["audit", "--json"]);
