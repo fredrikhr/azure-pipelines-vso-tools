@@ -52,7 +52,7 @@
     "globals": "^17",
     "npm-run-all2": "^9",
     "prettier": "^3",
-    "typescript": "^6"
+    "typescript": "^7"
   },
   "dependencies": {
     "azure-pipelines-task-lib": "^5.279.0"
