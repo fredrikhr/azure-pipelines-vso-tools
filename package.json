@@ -61,6 +61,6 @@
     "typescript": "^6"
   },
   "dependencies": {
-    "azure-pipelines-task-lib": "^5.279.0"
+    "azure-pipelines-task-lib": "^5.281.0"
   }
 }
